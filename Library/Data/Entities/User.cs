@@ -7,6 +7,11 @@ using Library.Contracts.DTO.Impl;
 
 namespace Library.Data.Entities
 {
+    /**
+     * <summary>
+     *  Таблица базы данных, хранящая информацию о пользователе 
+     * </summary>
+     */
     public class User : IDto<UserDTO>
     {
         public Guid Id { get; set; }
@@ -27,6 +32,14 @@ namespace Library.Data.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Dialog> OwnedDialogs { get; set; }
         
+        
+        /**
+         *<summary>
+         * Инициализация пользователя с заданным логином и паролем
+         * </summary>
+         * <param name="login">Логин пользователя</param>
+         * <param name="password">Пароль пользователя</param>
+         */
         public UserDTO ToDto()
         {
             return new UserDTO(this);
