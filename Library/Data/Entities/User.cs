@@ -32,6 +32,13 @@ namespace Library.Data.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Dialog> OwnedDialogs { get; set; }
         
+        public User()
+        {
+            Id = Guid.NewGuid();
+            Dialogs = new HashSet<Dialog>();
+            Messages = new HashSet<Message>();
+            OwnedDialogs = new HashSet<Dialog>();
+        }
         
         /**
          *<summary>
@@ -40,6 +47,13 @@ namespace Library.Data.Entities
          * <param name="login">Логин пользователя</param>
          * <param name="password">Пароль пользователя</param>
          */
+        public User(string login, string password) : this()
+        {
+            Login = login;
+            Password = password;
+            LastActivity = DateTime.UtcNow;
+        }
+        
         public UserDTO ToDto()
         {
             return new UserDTO(this);

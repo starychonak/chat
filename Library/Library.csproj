@@ -44,16 +44,56 @@
         <Reference Include="System.ComponentModel.DataAnnotations" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
+        <Reference Include="System.IdentityModel" />
         <Reference Include="System.Runtime.Serialization" />
         <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
           <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
         </Reference>
+        <Reference Include="System.ServiceModel" />
+        <Reference Include="System.ServiceModel.Primitives, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.ServiceModel.Primitives.4.9.0\lib\net461\System.ServiceModel.Primitives.dll</HintPath>
+        </Reference>
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Class1.cs" />
+        <Compile Include="Connection.cs" />
+        <Compile Include="Contracts\Auth\Events\UserConnectedEvent.cs" />
+        <Compile Include="Contracts\Auth\Requests\AuthRequest.cs" />
+        <Compile Include="Contracts\Auth\Responses\AuthResponse.cs" />
+        <Compile Include="Contracts\Dialog\Events\AddUser2DialogEvent.cs" />
+        <Compile Include="Contracts\Dialog\Events\ChangeDialogEvent.cs" />
+        <Compile Include="Contracts\Dialog\Events\CreateDialogEvent.cs" />
+        <Compile Include="Contracts\Dialog\Events\RemoveDialogEvent.cs" />
+        <Compile Include="Contracts\Dialog\Events\UserLeaveFromDialogEvent.cs" />
+        <Compile Include="Contracts\Dialog\Requests\AddUser2DialogRequest.cs" />
+        <Compile Include="Contracts\Dialog\Requests\ChangeDialogRequest.cs" />
+        <Compile Include="Contracts\Dialog\Requests\Connect2DialogRequest.cs" />
+        <Compile Include="Contracts\Dialog\Requests\CreateDialogRequest.cs" />
+        <Compile Include="Contracts\Dialog\Requests\LeaveFromDialogRequest.cs" />
+        <Compile Include="Contracts\Dialog\Requests\RemoveDialogRequest.cs" />
+        <Compile Include="Contracts\Dialog\Responses\ConnectToDialogResponse.cs" />
+        <Compile Include="Contracts\Dialog\Responses\CreateDialogResponse.cs" />
         <Compile Include="Contracts\DTO\Impl\MessageDTO.cs" />
         <Compile Include="Contracts\DTO\Impl\UserDTO.cs" />
+        <Compile Include="Contracts\Load\Requests\LoadDialogsRequest.cs" />
+        <Compile Include="Contracts\Load\Requests\LoadMessagesRequest.cs" />
+        <Compile Include="Contracts\Load\Responses\LoadDialogsResponse.cs" />
+        <Compile Include="Contracts\Load\Responses\LoadMessagesResponse.cs" />
+        <Compile Include="Contracts\Load\Responses\LoadOnlineUsersResponse.cs" />
+        <Compile Include="Contracts\Messaging\Events\MessageEditedEvent.cs" />
+        <Compile Include="Contracts\Messaging\Events\MessageRemovedEvent.cs" />
+        <Compile Include="Contracts\Messaging\Events\MessageSendEvent.cs" />
+        <Compile Include="Contracts\Messaging\Requests\EditMessageRequest.cs" />
+        <Compile Include="Contracts\Messaging\Requests\RemoveMessageRequest.cs" />
+        <Compile Include="Contracts\Messaging\Requests\SendMessageRequest.cs" />
+        <Compile Include="Contracts\Messaging\Responses\SendMessageResponse.cs" />
+        <Compile Include="Contracts\Request.cs" />
+        <Compile Include="Contracts\Response.cs" />
+        <Compile Include="Contracts\Result.cs" />
+        <Compile Include="Contracts\ServerEvent.cs" />
+        <Compile Include="Contracts\User\Events\ChangeUsernameEvent.cs" />
+        <Compile Include="Contracts\User\Requests\ChangePasswordRequest.cs" />
+        <Compile Include="Contracts\User\Requests\ChangeUsernameRequest.cs" />
         <Compile Include="Data\DBContext.cs" />
         <Compile Include="Data\Entities\Dialog.cs" />
         <Compile Include="Data\Entities\Message.cs" />
@@ -62,17 +102,22 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Contracts\DTO\IDto.cs" />
         <Compile Include="Contracts\DTO\Impl\DialogDTO.cs" />
+        <Compile Include="Services\IAuthService.cs" />
+        <Compile Include="Services\IDialogService.cs" />
+        <Compile Include="Services\ILoadService.cs" />
+        <Compile Include="Services\IMessagingService.cs" />
+        <Compile Include="Services\Impl\AuthService.cs" />
+        <Compile Include="Services\Impl\DialogService.cs" />
+        <Compile Include="Services\Impl\LoadService.cs" />
+        <Compile Include="Services\Impl\MessagingService.cs" />
+        <Compile Include="Services\Impl\Service.cs" />
+        <Compile Include="Services\Impl\UserService.cs" />
+        <Compile Include="Services\IService.cs" />
+        <Compile Include="Services\IUserService.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="App.config" />
       <None Include="packages.config" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Contracts\Auth" />
-      <Folder Include="Contracts\Dialog" />
-      <Folder Include="Contracts\Load" />
-      <Folder Include="Contracts\Messaging" />
-      <Folder Include="Contracts\User" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
