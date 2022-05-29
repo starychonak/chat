@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ChatApp.MainWindow"
+        Title="ChatApp">
+
+    <StackPanel>
+        <!-- <TextBlock Margin="16 16 16 0"  VerticalAlignment="Bottom" Text="{Binding username}">USERNAME</TextBlock> -->
+        <Grid ShowGridLines="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*" MaxWidth="300"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0">
+                <Button Width="200" Height="50" HorizontalContentAlignment="Center" UseLayoutRounding="True" VerticalContentAlignment="Center" Margin="16">Диалоги</Button>
+                <Button Width="200" Height="50" HorizontalContentAlignment="Center" UseLayoutRounding="True" VerticalContentAlignment="Center" Margin="16">Создать диалог</Button>
+                <Button Width="200" Height="50" HorizontalContentAlignment="Center" UseLayoutRounding="True" VerticalContentAlignment="Center" Margin="16">Настройки</Button>
+                <Button Width="200" Height="50" HorizontalContentAlignment="Center" UseLayoutRounding="True" VerticalContentAlignment="Center" Margin="16">Выход</Button>
+            </StackPanel>
+    
+        </Grid>
+    </StackPanel>
+    
+    
+</Window>

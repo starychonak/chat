@@ -1,8 +1,6 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using ChatApp.ViewModels;
-using ChatApp.Views;
 
 namespace ChatApp
 {
@@ -17,10 +15,8 @@ namespace ChatApp
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new MainWindow
-                {
-                    DataContext = new MainWindowViewModel(),
-                };
+                // desktop.MainWindow = new MainWindow();
+                desktop.MainWindow = new AuthWindow();
             }
 
             base.OnFrameworkInitializationCompleted();

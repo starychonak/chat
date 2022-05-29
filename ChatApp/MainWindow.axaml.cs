@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace ChatApp.Views
+namespace ChatApp
 {
     public partial class MainWindow : Window
     {
