@@ -9,6 +9,7 @@ namespace Library.Contracts
      * Используется для наследования классов, хранящих данные, передаваемые клиентом сервису
      * </summary>
      */
+    [DataContract]
     public abstract class Request
     {
         [DataMember] public Guid Id { get; set; }
